@@ -1,0 +1,35 @@
+---
+title: "bat_data_exploration"
+author: "Elise Gould"
+date: "06/02/2017"
+output: html_document
+---
+# Challenge 13
+```{r load-data}
+library(tidyverse)
+bat_dat <- read_csv("../output/bat_dat.csv")
+# Challenge 13
+source("../R/se.R")
+
+```
+
+```{r bat-summary-vars}
+# Challenge 13 cont
+richness_by_season <- bat_dat %>% 
+        select(Site, Habitat, Season, BatSpecies) %>%
+        group_by(Habitat, Season) %>% #For each habitat
+        summarise(mean_richness = mean(BatSpecies),
+                  se_richness = se(BatSpecies))
+```
+
+```{r plot}
+# Challenge 15
+ggplot(data = richness_by_season, 
+       aes(x = Habitat, y = mean_richness, fill = factor(Season))) +
+        geom_bar(stat = "identity", position = position_dodge()) +
+        geom_errorbar(aes(ymin = mean_richness - se_richness, 
+                          ymax = mean_richness + se_richness), 
+                      width = 0.1,
+                      position = position_dodge(0.9)) # shifts the error bars over the correct bar
+```
+
