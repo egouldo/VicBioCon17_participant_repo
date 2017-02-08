@@ -24,7 +24,7 @@ Open Science, duh. Sharing your code and / or data publically on GitHub allows a
 
 Sharing your reserach data as well as your code may even boost your paper's citation stats (Piwowar et al, 2007).
 
-A README is quintessential to having a well-documented and reproducible open repository. In addition to keeping good meta-data, sharing your work openly may facilitate new problem formulations and new frameworks in your discipline (Bonnet et al, 2012).
+A README is quintessential to having a well-documented and reproducible open repository. In addition to keeping good meta-data, sharing your work openly may facilitate new problem formulations and new frameworks in your discipline (Freire et al, 2012).
 
 ## References
 
